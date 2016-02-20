@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Byte 3</title>
+
+	<!-- Semantic Framework -->
+	<link rel="stylesheet" rel="text/styleshet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.1.8/semantic.min.css">
+</head>
+<body>
+	<div class="ui menu inverted">
+		<div class="ui container">
+			<h4 class="header item"><a href="/">Home</a></h4>
+			<h4 class="header item"><a href="#">About</a></h4>
+			<h4 class="header item"><a href="quality">Quality</a></h4>	
+		</div>
+	</div>
+	<div class="ui container">
+		<h2>About the dataset</h2>
+		<h3>Overview</h3>
+		<p>The data set is from the Balanced Campus Study. This analysis is of my own data provided by the lab.</p>
+
+		<h3>Data Source</h3>
+		<p>Provided by the lab conducting the Balanced Campus study</p>
+
+		<h2>For Byte 3 - Sleep Patterns (Time vs Activity Analysis)</h2>
+		<p>I decided to map out my activity along with times in the Time &lt;-&gt; Activity analysis. Here, the hour of the day (24 hour format - is mapped to the activity events generated</p>
+
+		<h3><strong>My Sleep Patters: The question I asked was - at what time of the day was my sleep the deepest/most sound?</strong></h3>
+		<p>
+		<br/>
+		To answer that, I clustered all the activities from the <em>plugin_google_activity_recognition</em> table. As seen in the data display, I sleep the deepest from 6-7 when most of my band events are 'still'.
+
+		Here is an image from that data:<br/>
+		<img src="http://s2.postimg.org/olw7l4eah/Screen_Shot_2016_02_20_at_12_07_19_PM.png" width="50%" height="50%" />
+		</p>
+
+		<br/>
+		<h2>Table Descriptons from my Balanced Campus Dataset</h2>
+		<p>I have listed out the table descriptions for all the tables in this section</p>
+		<ul>
+		   {% for item in queries %}
+		 	<li>Query: {{item.query}}<br>
+		       {% for row in item.results %}
+		          {{row}}<br>
+		       {% endfor %}
+		   </li>
+		   <hr/>
+		   {% endfor %}
+		</ul>
+	</div>
+	<script type="text/javascript" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.1.8/semantic.min.js"></script>
+</body>
+</html>
